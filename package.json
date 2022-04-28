@@ -1,7 +1,7 @@
 {
-  "name": "semestraltopicos",
+  "name": "egresados",
   "version": "1.0.0",
-  "description": "Proyecto semestral de topicos selectos de web",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "babel-node": "babel-node --presets=@babel/preset-env",
@@ -9,15 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/narseg.f/semestraltopicos.git"
+    "url": "git+https://github.com/IngOrdaz/Egresados.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/narseg.f/semestraltopicos/issues"
+    "url": "https://github.com/IngOrdaz/Egresados/issues"
   },
-  "homepage": "https://gitlab.com/narseg.f/semestraltopicos#readme",
+  "homepage": "https://github.com/IngOrdaz/Egresados#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
@@ -30,11 +36,5 @@
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.9",
-    "@babel/node": "^7.16.8",
-    "@babel/preset-env": "^7.16.11"
   }
 }
