@@ -1,0 +1,440 @@
+<style>
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:  #17315a ;
+  }
+  
+  ul.topnav li {float: left;}
+  
+  ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  ul.topnav li a:hover:not(.active) {background-color: #92a5bc ;}
+    
+  ul.topnav li a.active {background-color:  #4f6f8f;}
+  
+  ul.topnav li.right {float: right;}
+  
+  @media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  
+  
+  /* Header/Blog Title */
+  #grad1 {
+    background-color: linear-gradient(top bottom right, red, blue);
+  }
+
+  .header {
+    padding: 30px;
+    text-align: center;
+    background-color: crimson;
+    border-radius: 20px 20px; 
+  }
+  
+  .header h1 {
+    font-size: 50px;
+    color: whitesmoke;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 100%;
+    max-height: 400px;
+    padding: 350px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    border-radius: 5px 5px; 
+  }
+
+  .newspaper {
+    column-count: 1;
+    column-gap: 30px;  
+    column-width: 100px;
+  }
+  
+  /* Fake image 
+  img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }*/
+
+  .fakeimg {
+    align-self: left;
+    width: 100%;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: rgb(184, 184, 184);
+    padding: 20px;
+    margin-top: 20px;
+    text-align: justify;
+    border-radius: 10px 10px; 
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+    }
+    @media screen and (max-width: 600px) {
+      ul.topnav li.right, 
+      ul.topnav li {float: none;}
+    }
+    
+    h2{
+      text-align: center;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .responsive {
+      padding: 0 6px;
+      float: left;
+      width: 24.99999%;
+    }
+    
+    @media only screen and (max-width: 700px) {
+      .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+      }
+    }
+    
+    @media only screen and (max-width: 500px) {
+      .responsive {
+        width: 100%;
+      }
+    }
+    
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    .publi {
+      background-color: #a4a4a5cb ;
+      padding-top: 20px;
+      padding-right: 40px;
+      padding-bottom: 20px;   
+      padding-left: 40px;
+      border-radius: 14px 14px;
+      } 
+      
+      input[type=text] {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 4px;
+      }
+      
+      textarea {
+        width: 100%;
+        padding: 12px 12px;
+        box-sizing: border-box;
+        border: 1px solid rgb(73, 73, 73);
+        border-radius: 4px;
+      }
+
+      input[type=submit] {
+        width: 20%;
+        background-color: #0081bd;
+        color: white;
+        padding: 12px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type=file] {
+        padding: 12px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .divconteiner{
+        padding-top: 5px;
+        padding-right: 250px;
+        padding-bottom: 5px;   
+        padding-left: 270px;
+      }
+.emp-profile {
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.profile-img {
+    text-align: center;
+}
+
+    .profile-img img {
+        width: 70%;
+        height: 100%;
+    }
+
+    .profile-img .file {
+        position: relative;
+        overflow: hidden;
+        margin-top: -20%;
+        width: 70%;
+        border: none;
+        border-radius: 0;
+        font-size: 15px;
+        background: #212529b8;
+    }
+
+        .profile-img .file input {
+            position: absolute;
+            opacity: 0;
+            right: 0;
+            top: 0;
+        }
+
+.profile-head h5 {
+    color: #333;
+}
+
+.profile-head h6 {
+    color: #0062cc;
+}
+
+.profile-edit-btn {
+    border: none;
+    border-radius: 1.5rem;
+    
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.proile-rating {
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+
+    .proile-rating span {
+        color: #495057;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+.profile-head .nav-tabs {
+    margin-bottom: 5%;
+}
+
+    .profile-head .nav-tabs .nav-link {
+        font-weight: 600;
+        border: none;
+    }
+
+        .profile-head .nav-tabs .nav-link.active {
+            border: none;
+            border-bottom: 2px solid #0062cc;
+        }
+
+.profile-work {
+    padding: 14%;
+    margin-top: -15%;
+}
+
+    .profile-work p {
+        font-size: 12px;
+        color: #818182;
+        font-weight: 600;
+        margin-top: 10%;
+    }
+
+    .profile-work a {
+        text-decoration: none;
+        color: #495057;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .profile-work ul {
+        list-style: none;
+    }
+
+.profile-tab label {
+    font-weight: 600;
+}
+
+.profile-tab p {
+    font-weight: 600;
+    color: #0062cc;
+}
+</style>
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        Ximena lopez
+                                    </h5>
+                                    <h6>
+                                        Web Developer and Designer
+                                    </h6>
+       
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>WORK LINK</p>
+                            <a href="">Website Link</a><br/>
+                            <a href="">Bootsnipp Profile</a><br/>
+                            <a href="">Bootply Profile</a>
+                            <p>SKILLS</p>
+                            <a href="">Web Designer</a><br/>
+                            <a href="">Web Developer</a><br/>
+                            <a href="">WordPress</a><br/>
+                            <a href="">WooCommerce</a><br/>
+                            <a href="">PHP, .Net</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Ximenita69</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nombre</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Ximena lopez</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Ximenita6969@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Telefono</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>443 0-00-00-00</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Puesto</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Web Developer and Designer</p>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Empresa</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Ponycloud</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Carrera</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Ing. En sistemas</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total de proyectos</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>230</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Curriculum Vitae</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><a href="">Descargar</a><br/></p>
+                                            </div>
+                                        </div>
+                                        
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Biografia</label><br/>
+                                        <p>Peque�a descripcion</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>

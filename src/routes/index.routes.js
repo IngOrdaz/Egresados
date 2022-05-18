@@ -43,10 +43,13 @@ router.get("/users/modifyAlumnos", (req, res) => {
   res.render("usersModifyAlumnos");
 });
 
-router.get("/users/profile", (req, res) => {
-  res.render("usersProfile");
+router.get("/users/profileStudent", (req, res) => {
+  res.render("profileStudent");
 });
 
+router.get("/users/profileEgresado", (req, res) => {
+  res.render("profileEgresado");
+});
 
 
 export default router;
