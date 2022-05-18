@@ -4,6 +4,8 @@
         <div class="col">
             <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded"></div>    
                 <form class="row-g3 needs-validation" novalidate>
+                    <h1>Registro Egresados</h1>
+                    <br>
                     <div class="col-md-4">
                         <label for="name" class="form-label">Nombre(s)</label>
                         <input id="name" name="name" type="text" class="form-control" placeholder="Juanito" required>
@@ -74,7 +76,22 @@
                         <input class="form-control" type="file" id="cv" name="cv" required>
                         <div class="valid-feedback">Datos Asignados</div>
                         <div class="invalid-feedback">Complete los datos</div>
+                    </div> 
+
+                    <div class="col-md-4">
+                        <label for="user" class="form-label">Usuario</label>
+                        <input id="user" name="user" type="text" class="form-control" placeholder="pepitoSistemas" >
+                        <div class="valid-feedback">Datos Asignados</div>
+                        <div class="invalid-feedback">Complete los datos</div>
+                    </div>    
+
+                    <div class="col-md-4">
+                        <label for="pass" class="form-label">Contraseña</label>
+                        <input id="pass" name="pass" type="password" class="form-control" placeholder="***" >
+                        <div class="valid-feedback">Datos Asignados</div>
+                        <div class="invalid-feedback">Complete los datos</div>
                     </div>  
+
                     <br>
                     <button type="submit" class="btn btn-primary">Registrar</button>
                 </form>

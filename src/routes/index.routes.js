@@ -22,9 +22,18 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/muro", (req, res) => {
-  res.render("muro");
+router.get("/password/recover", (req, res) => {
+  res.render("recoverPassword");
 });
+
+router.get("/users/muro", (req, res) => {
+  res.render("muroUsers");
+});
+
+router.get("/users/admin/muro", (req, res) => {
+  res.render("muroAdministrar");
+});
+
 
 router.get("/users/modifyEgresados", (req, res) => {
   res.render("usersModifyEgresados");
@@ -33,6 +42,7 @@ router.get("/users/modifyEgresados", (req, res) => {
 router.get("/users/modifyAlumnos", (req, res) => {
   res.render("usersModifyAlumnos");
 });
+
 router.get("/users/profile", (req, res) => {
   res.render("usersProfile");
 });
