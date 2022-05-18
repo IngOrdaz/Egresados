@@ -71,7 +71,93 @@
       ul.topnav li.right, 
       ul.topnav li {float: none;}
     }
-    <!-- estilos login -->
+    
+    /*CSS Muro*/
+      /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 100%;
+    max-height: 400px;
+    padding: 350px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    border-radius: 5px 5px; 
+  }
+  .newspaper {
+    column-count: 1;
+    column-gap: 30px;  
+    column-width: 100px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    align-self: left;
+    width: 100%;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: rgb(184, 184, 184);
+    padding: 20px;
+    margin-top: 20px;
+    text-align: justify;
+    border-radius: 10px 10px; 
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+    input[type=text] {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 4px;
+      }
+      
+      textarea {
+        width: 100%;
+        padding: 12px 12px;
+        box-sizing: border-box;
+        border: 1px solid rgb(73, 73, 73);
+        border-radius: 4px;
+      }
+      input[type=submit] {
+        width: 20%;
+        background-color: #0081bd;
+        color: white;
+        padding: 12px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type=file] {
+        padding: 12px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .divconteiner{
+        padding-top: 5px;
+        padding-bottom: 5px;   
+      }
+      input[type=button] {
+        width: 10%;
+        background-color: #626466;
+        color: white;
+        padding: 5px 5px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+      input[type=button]:hover {
+        background-color: #00b5fc;
+      }
     
 </style>
   </head>
@@ -87,6 +173,7 @@
 
    <!-- {{>footer}} --> 
     
+    <!-- estilos login -->
     <style>
       
   .login-design{
