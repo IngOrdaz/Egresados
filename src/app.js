@@ -1,3 +1,4 @@
+//Ignacio Ordaz
 import express from "express";
 import indexRoutes from "./routes/index.routes";
 //import exphbs from 'express-handlebars'; es el de abajo pero ya no da error el de abajo
@@ -13,7 +14,7 @@ app.engine(
   ".hbs",
   exphbs.engine({
     extname: ".hbs",
-    defaultLayout: "main",
+    defaultLayout: "main", 
     layoutsDir: path.join(app.get("views"), "layouts"),
     partialsDir: path.join(app.get("views"), "partials"),
   })
@@ -24,3 +25,4 @@ app.set("view engine", ".hbs");
 app.use(indexRoutes);
 
 export default app;
+//Ignacio Ordaz

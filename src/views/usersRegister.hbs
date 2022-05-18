@@ -1,1 +1,88 @@
-<h1>users register</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded"></div>    
+                <form class="row-g3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                        <label for="name" class="form-label">Nombre(s)</label>
+                        <input id="name" name="name" type="text" class="form-control" placeholder="Juanito" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="fatherLastName" class="form-label">Apellido Paterno</label>
+                        <input id="fatherLastName" name="fatherLastName" type="text" class="form-control" placeholder="Maldonado" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="motherLastName" class="form-label">Apellido Materno</label>
+                        <input id="motherLastName" name="motherLastName" type="text" class="form-control" placeholder="Pérez" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="correo@dominio.com" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="phone" class="form-label">Teléfono</label>
+                        <input id="phone" name="phone" type="text" class="form-control" placeholder="5544332211" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="career">Carrera</label>
+                        <select name="career" id="career" class="form-select" required>
+                            <option selected disabled value="">Seleccione...</option>
+                            <option>Ingenieria en Sistemas Computacionales</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="speciality" class="form-label">Especialidad</label>
+                        <input id="speciality" name="speciality" type="text" class="form-control" placeholder="Seguridad de la Información" required>
+                    </div>    
+
+                    <div class="col-md-4">
+                        <label for="company" class="form-label">Empresa Donde Trabaja</label>
+                        <input id="company" name="company" type="text" class="form-control" placeholder="IBM" required>
+                    </div>  
+
+                    <div class="col-md-4">
+                        <label for="job" class="form-label">Puesto de Trabajo</label>
+                        <input id="job" name="job" type="text" class="form-control" placeholder="Lider de Proyecto" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="cv">Añadir CV</label>
+
+                    </div>  
+                    <br>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>    
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- script para validación de datos-->
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
