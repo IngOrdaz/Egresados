@@ -14,4 +14,8 @@ router.get("/users/register", (req, res) => {
   res.render("usersRegister");
 });
 
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
 export default router;
