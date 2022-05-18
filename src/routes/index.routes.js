@@ -30,6 +30,9 @@ router.get("/users/modifyEgresados", (req, res) => {
   res.render("usersModifyEgresados");
 });
 
+router.get("/users/modifyAlumnos", (req, res) => {
+  res.render("usersModifyAlumnos");
+});
 router.get("/users/profile", (req, res) => {
   res.render("usersProfile");
 });
