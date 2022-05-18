@@ -72,106 +72,7 @@
       ul.topnav li {float: none;}
     }
     <!-- estilos login -->
-  .login-design{
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    height: 100vh;
-    background-color: blue;
-    background-size: cover;
-}
-
-.waves{
-    display: flex;   
-}
-
-.login{
-    background-color: rgb(0, 0, 0);
-    opacity: 0.7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-data{
-    background-color: #0e0e0e;
-    display: grid;
-    color: white;
-    text-align: center;
-    width: 60%;
-    height: 60%;
-}
-
-.login-data h1{
-    font-weight: 200;
-    font-size: xx-large;
-    color: white;
-}
-
-.login-data h1:hover{
-    color: #ff6a00;
-}
-
-.input-group{
-    position: relative;
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: 1.5rem;
-}
-
-.input-fill input{
-    border: none;
-    background-color: black;
-    border-bottom: 3px solid white;
-    color: white;
-    width: 100%;
-    font-size: 1.0625rem;
-    height: 2rem;
-    padding-left: 2rem;
-    line-height: 147.6%;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;    
-}
-
-.input-fill input:focus{
-    outline: none;
-    border-color: #ff6a00;
-}
-
-
-.input-fill input:focus + .input-label{
-    top: 0;
-    margin-bottom: 2rem;
-    color: #ff6a00;
-}
-
-.input-label{
-    position: absolute;
-    top: 15px;
-    left: 28px;
-    line-height: 147.6%;
-    color: white;
-    transition: top .2s;
-    font-size: 700;
-}
-
-.btn-login{
-    border-radius: 3rem;
-    width: 45%;
-    border: 1px solid #ff6a00;
-    color: white;
-    line-height: 1.6rem;
-    font-size: 1.3rem;
-    background-color: #ff6a00;
-    padding-top: 0.5rem 0;
-    transition: 0.1s ease-in-out all;
-    font-weight: 500;
-}
-
-.btn-login:hover{
-    cursor: pointer;
-    background-color: rgb(0, 0, 0);
-    color: #ff6a00;
-}
+    
 </style>
   </head>
   <body>
@@ -186,6 +87,127 @@
 
    <!-- {{>footer}} --> 
     
-   
+    <style>
+      
+  .login-design{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.786);;
+    background-size: cover;
+}
+
+.waves{
+    display: flex;   
+}
+
+.login{
+    background-color: #1B396A;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-data{
+    background-color: #0e0e0e;
+    opacity: 0.85;
+    display: grid;
+    color: white;
+    text-align: center;
+    width: 60%;
+    height: 60%;
+}
+
+.login-data h1{
+    font-weight: 200;
+    font-size: xx-large;
+    color: white;
+    font: bolder;
+}
+
+.login-data h1:hover{
+    color: #1B396A;
+}
+
+.input-group{
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+.input-fill input{
+    border: none;
+    background-color: #ADACAF ;
+    border-bottom: 3px solid #1B396A;
+    color: #1B396A;
+    width: 100%;
+    font-size: 1.0625rem;
+    height: 2rem;
+    padding-left: 2rem;
+    line-height: 147.6%;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;    
+}
+
+.input-fill input:focus{
+    outline: none;
+    border-color: #ADACAF;
+    background-color: #1B396A;
+    color: #ADACAF;
+}
+
+
+.input-fill input:focus + .input-label{
+    top: 0;
+    margin-bottom: 2rem;
+    color: #ADACAF;
+}
+
+.input-fill a{
+  text-align: center;
+  text-decoration: none;
+  padding-left: 20px  ;
+  color: #ADACAF;
+}
+
+.input-fill a:hover{
+  color: #1B396A;
+}
+
+.input-label{
+    position: absolute;
+    top: 0px;
+    left: 28px;
+    line-height: 147.6%;
+    color: #ADACAF;
+    transition: top .2s;
+    font-size: 700;
+}
+
+.btn-login{
+    border-radius: 3rem;
+    width: 45%;
+    border: 1px solid #1B396A;
+    color: white;
+    line-height: 1.6rem;
+    font-size: 1.3rem;
+    background-color: #1B396A;
+    padding-top: 0.5rem 0;
+    transition: 0.1s ease-in-out all;
+    font-weight: 500;
+}
+
+.btn-login:hover{
+    cursor: pointer;
+    background-color:#ADACAF ;
+    color: #1B396A;
+}
+
+::placeholder{
+  color: #1B396A;
+}
+    </style>
   </body>
 </html>
