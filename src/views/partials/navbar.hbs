@@ -1,45 +1,92 @@
-<div class="container mt-3">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+</head>
 
-  <div class="responsive">
-    <div class="gallerie">
-      <a target="_blank" href="https://www.gob.mx/">
-        <img src="https://brandemia.org/sites/default/files/inline/images/gobierno_de_mexico_2018-24_logo_type_only.jpg"
-          alt="Cinque Terre" width="600" height="400">
-      </a>
+<style>
+  .navbar {
+    background-color: #17315a;
+  }
+
+  #casita {
+    color: white;
+  }
+
+  #navegacion li a {
+    color: hsla(0, 0%, 100%, .55);
+  }
+
+  #navegacion2 li a {
+    color: white;
+  }
+
+  .barraNavegacion {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .barraNavegacion a:hover {
+    text-decoration: underline;
+  }
+</style>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <a href="https://www.gob.mx/" target="_blank">
+          <div><img src="https://i.ibb.co/Kwmy0Pt/pleca-gob1.png"></div>
+        </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a href="https://www.gob.mx/sep" target="_blank">
+          <div><img src="https://i.ibb.co/nDNvx3J/pleca-gob2.png"></div>
+        </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a href="https://www.tecnm.mx/" target="_blank">
+          <div><img src="https://i.ibb.co/nPvqFK9/pleca-tecnm.jpg"></div>
+        </a>
+      </div>
     </div>
+    <div class="clearfix"></div>
   </div>
-
-
-  <div class="responsive">
-    <div class="gallerie">
-      <a target="_blank" href="https://www.gob.mx/sep">
-        <img src="http://www.lavozdetamaulipas.mx/wp-content/uploads/2021/08/cover_educacion-1.jpg" alt="Forest"
-          width="600" height="400">
-      </a>
+  <nav class="navbar navbar-light navbar-expand-md">
+    <div class="container-fluid barraNavegacion">
+      <a class="navbar-brand" href="/"><i id="casita" style="padding-left: 50px;" class="bi bi-house-door-fill"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="navegacion" class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bolsa de Trabajo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/profileEgresado">Perfil Egresado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/profileStudent">Perfil Estudiante</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/muro">Muro Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/admin/muro">Muro Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">Acerca de</a>
+          </li>
+        </ul>
+        <ul id="navegacion2" class="navbar-nav" style="padding-right: 50px;">
+          <li class="navbar-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="navbar-item">
+            <a class="nav-link" href="/users/registerAlumnos">Registrar</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallerie">
-      <a target="_blank" href="https://www.tecnm.mx/">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Tecnologico_Nacional_de_Mexico.svg/800px-Tecnologico_Nacional_de_Mexico.svg.png?20201009013701"
-          alt="Northern Lights" width="600" height="400">
-      </a>
-    </div>
-  </div>
-
-
-  <div class="clearfix"></div>
-
-</div>
-
-
-<ul class="topnav">
-  <li><a href="/">INICIO</a></li>
-  <li><a href="/users/muro">Bolsa de Trabajo</a></li>
-  <li><a href="/users/profileEgresado">Perfil egresado</a></li>
-  <li><a href="/users/profileStudent">Perfil Estudiante</a></li>
-  <li><a class="active" href="/users/admin/muro">Muro</a></li>
-  <li><a href="/login">Login</a></li>
-</ul>
+  </nav>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</header>

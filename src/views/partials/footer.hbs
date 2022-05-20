@@ -1,1 +1,60 @@
-<h4>footer</h4>
+<style>
+        #footer {
+            color: white;
+            background: #1B396A;
+            -webkit-box-shadow: 0px 2px 26px 12px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 2px 26px 12px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 2px 26px 12px rgba(0, 0, 0, 0.75);
+            flex-shrink: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrapper {
+            flex: 1 0 auto;
+        }
+        .footPrimero{
+            padding-top: 20px;
+        }
+        .footTitulo{
+            font-weight: 700;
+        }
+    </style>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-4">
+                    <h5 class="footTitulo footPrimero">Campus I</h5>
+                    <p>Avenida Tecnológico #1500, Col. Lomas de Santiaguito. Morelia, Mich.</p>
+                    <h5 class="footTitulo">Campus II</h5>
+                    <p>Camino de la Arboleda S/N, Residencial San Jose de la Huerta, Tenencia Morelos. Morelia, Mich.
+                    </p>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                    <h5 class="footTitulo footPrimero">Contacto</h5>
+                    <p>Email: difusion@itmorelia.edu.mx</p>
+                    <p>Teléfono: +52 (443) 312 1570</p>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="footPrimero">
+                        <iframe width="350" height="250" id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=instituto%20tecnologico%20de%20morelia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <p>© Copyright 2022 PonyTech - Todos los Derechos Reservados</p>
+            <p>Última actualización: 20/05/1969</p>
+        </div>
+    </footer>
