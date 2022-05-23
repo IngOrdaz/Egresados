@@ -23,8 +23,8 @@ app.engine(
 app.set("view engine", ".hbs");
 
 //middlewares
-app.use(morgan('dev'))
-app.use(express.urlencoded({extended:false}))
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended:false}));
 
 //Routes
 app.use(indexRoutes);

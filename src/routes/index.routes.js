@@ -33,7 +33,6 @@ router.post("/users/registerAlumnops/add", async(req, res) => {
   console.log(alumnoSaved)
   res.send('usuario registrad');
 });
-router.g
 
 router.get("/login", (req, res) => {
   res.render("login");
