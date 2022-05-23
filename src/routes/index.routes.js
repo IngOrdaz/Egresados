@@ -16,16 +16,23 @@ router.get("/users/registerEgresados", (req, res) => {
   res.render("usersRegisterEgresados");
 });
 
-router.get("/users/registerEgresados/added", async(req, res) => {
+router.post("/users/registerEgresados/add", async(req, res) => {
   const newegresado=registerEgresados(req.body)
   const egresadoSaved=await newegresado.save()
   console.log(egresadoSaved)
   res.send('usuario registrad');
 });
+
 router.get("/users/registerAlumnos", (req, res) => {
   res.render("usersRegisterAlumnos");
 });
 
+router.post("/users/registerAlumnops/add", async(req, res) => {
+  const newalumno=registerAlumnos(req.body)
+  const alumnoSaved=await newalumno.save()
+  console.log(alumnoSaved)
+  res.send('usuario registrad');
+});
 router.get("/login", (req, res) => {
   res.render("login");
 });

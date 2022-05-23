@@ -28,6 +28,11 @@ const registerEgresadosSchema =new Schema(
         require:true,
         trim:true
     },
+    Ciudad: {
+        type: String,
+        trim:true,
+        require:true,
+    },
     Carrera: {
         type: String,
         trim:true,
@@ -38,14 +43,9 @@ const registerEgresadosSchema =new Schema(
         trim:true,
         require:true
     },
-    Usuario: {
-        type: String,
-        trim:true,
+    Empresa: {
+        type:String,
         require:true,
-        unique: true
-    },
-    Contraseña: {
-        type: String,
         trim:true,
         require:true
     },
@@ -58,18 +58,17 @@ const registerEgresadosSchema =new Schema(
         type:String,
         trim:true
     },
-    Empresa: {
-        type:String,
-        require:true,
-        trim:true,
-        require:true
-    },
-    Ciudad: {
+    Usuario: {
         type: String,
         trim:true,
         require:true,
-    }
-},
+        unique: true
+    },
+    Contraseña: {
+        type: String,
+        trim:true,
+        require:true
+    }},
     {
         //permite agregar created at y updated at
         timestamps: true,

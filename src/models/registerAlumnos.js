@@ -28,6 +28,11 @@ const registerAlumnosSchema =new Schema(
         require:true,
         trim:true
     },
+    Ciudad: {
+        type: String,
+        trim:true,
+        require:true
+    },
     Carrera: {
         type: String,
         trim:true,
@@ -53,27 +58,7 @@ const registerAlumnosSchema =new Schema(
         type: String,
         trim:true,
         require:true
-    },
-    Puesto: {
-        type:String,
-        require:true,
-        trim:true
-    },
-    CV:{
-        type:String,
-        trim:true
-    },
-    Empresa: {
-        type:String,
-        require:true,
-        trim:true
-    },
-    Ciudad: {
-        type: String,
-        trim:true,
-        require:true
-    }
-},
+    }},
     {
         //permite agregar created at y updated at
         timestamps: true,
