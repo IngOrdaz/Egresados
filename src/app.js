@@ -4,6 +4,7 @@ import indexRoutes from "./routes/index.routes";
 //import exphbs from 'express-handlebars'; es el de abajo pero ya no da error el de abajo
 const exphbs = require("express-handlebars");
 import path from "path";
+import morgan from "morgan";
 
 //init
 const app = express();
@@ -20,6 +21,10 @@ app.engine(
   })
 );
 app.set("view engine", ".hbs");
+
+//middlewares
+app.use(morgan('dev'))
+app.use(express.urlencoded({extended:false}))
 
 //Routes
 app.use(indexRoutes);

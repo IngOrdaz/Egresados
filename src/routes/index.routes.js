@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import registerEgresados from "../models/registerEgresados";
+import registerAlumnos from "../models/registerAlumnos";
 
 const router = Router();
 
@@ -14,6 +16,12 @@ router.get("/users/registerEgresados", (req, res) => {
   res.render("usersRegisterEgresados");
 });
 
+router.get("/users/registerEgresados/added", async(req, res) => {
+  const newegresado=registerEgresados(req.body)
+  const egresadoSaved=await newegresado.save()
+  console.log(egresadoSaved)
+  res.send('usuario registrad');
+});
 router.get("/users/registerAlumnos", (req, res) => {
   res.render("usersRegisterAlumnos");
 });
