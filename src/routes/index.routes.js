@@ -67,5 +67,9 @@ router.get("/users/profileEgresado", (req, res) => {
   res.render("profileEgresado");
 });
 
+router.get("/bolsa", (req, res) => {
+  res.render("bolsacarrusel");
+});
+
 
 export default router;
