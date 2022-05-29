@@ -1,4 +1,5 @@
 import {Schema,model} from 'mongoose';
+const bcrypt = require("bcryptjs");
 
 const registerAlumnosSchema =new Schema( 
     {
@@ -48,16 +49,7 @@ const registerAlumnosSchema =new Schema(
         trim:true,
         require:true
     },
-    Usuario: {
-        type: String,
-        trim:true,
-        require:true,
-        unique: true
-    },
-    Contraseña: {
-        type: String,
-        trim:true,
-        require:true
+    Usuario: { 
     }},
     {
         //permite agregar created at y updated at
@@ -65,4 +57,11 @@ const registerAlumnosSchema =new Schema(
         versionKey:false
     }
 );
+
+//bcrypt password
+registerAlumnosSchema.methods.encryptContraseña = async (Contraseña) => {
+    const salt = await bcrypt.genSalt(10);
+    const hash = bcrypt.hash(Contraseña, salt);
+    return hash;
+  };
 export default model('Alumnos', registerAlumnosSchema);
