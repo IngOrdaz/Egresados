@@ -79,7 +79,7 @@ const registerEgresadosSchema = new Schema(
 );
 
 //bcrypt password
-registerEgresadosSchema.methods.encryptContraseña = async (Contraseña) => {
+registerEgresadosSchema.methods.encryptPassword = async (Contraseña) => {
   const salt = await bcrypt.genSalt(10);
   const hash = bcrypt.hash(Contraseña, salt);
   return hash;

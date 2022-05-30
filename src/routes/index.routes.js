@@ -48,6 +48,7 @@ router.post("/users/registerEgresados/add", async (req, res) => {
       Usuario,
       Contraseña,
     });
+    addEgresado.Contraseña = await addEgresado.encryptPassword(Contraseña);
     const newEgresado = await addEgresado.save();
     console.log(newEgresado);
     res.redirect("/users/registerEgresados");
@@ -89,6 +90,7 @@ router.post("/users/registerAlumnops/add", async (req, res) => {
       Usuario,
       Contraseña,
     });
+    addAlumno.Contraseña = await addAlumno.encryptPassword(Contraseña);
     const newAlumno = await addAlumno.save();
     console.log(newAlumno);
     res.redirect("/users/registerAlumnos");
