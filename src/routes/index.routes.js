@@ -123,12 +123,24 @@ router.get("/users/modifyAlumnos", (req, res) => {
   res.render("usersModifyAlumnos");
 });
 
-router.get("/users/profileStudent", (req, res) => {
-  res.render("profileStudent");
+router.get("/users/profileStudent", async (req, res) => {
+  
+  const usuarios = await registerAlumnos.find({}).lean();
+
+  console.log(usuarios)
+
+  res.render("profileStudent",{
+    usuarios
+  });
 });
 
-router.get("/users/profileEgresado", (req, res) => {
-  res.render("profileEgresado");
+router.get("/users/profileEgresado", async(req, res) => {
+  const usuariose = await registerEgresados.find({}).lean();
+
+  console.log(usuariose)
+  res.render("profileEgresado",{
+    usuariose
+  });
 });
 
 router.get("/bolsa", (req, res) => {
