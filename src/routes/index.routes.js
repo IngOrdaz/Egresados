@@ -146,8 +146,16 @@ router.get("/users/modifyEgresados", (req, res) => {
   res.render("usersModifyEgresados");
 });
 
-router.get("/users/modifyAlumnos", (req, res) => {
-  res.render("usersModifyAlumnos");
+//edit alumnos
+router.get("/users/modifyAlumnos/:id", async (req, res) => {
+  try {
+    const alu = await registerAlumnos.findById(req.params.id).lean();
+    console.log(alu);
+    res.render("usersModifyAlumnos",{alu});
+  } catch (error) {
+      res.render('usersModifyAlumnos')
+  }
+
 });
 
 router.get("/users/profileStudent", async (req, res) => {
