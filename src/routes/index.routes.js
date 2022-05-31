@@ -128,8 +128,9 @@ router.get("/users/modifyAlumnos/:id", async (req, res) => {
   } catch (error) {
       res.render('usersModifyAlumnos')
   }
-
 });
+
+
 
 router.get("/users/profileStudent", (req, res) => {
   res.render("profileStudent");

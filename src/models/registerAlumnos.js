@@ -39,10 +39,10 @@ const registerAlumnosSchema = new Schema(
       trim: true,
       require: true,
     },
-    Semestre: {
-      type: String,
-      trim: true,
-      require: true,
+    Semestre:{
+      type:String,
+      trim:true,
+      require:true
     },
     Especialidad: {
       type: String,
