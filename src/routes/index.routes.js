@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router } from "express";
 import registerEgresados from "../models/registerEgresados";
 import registerAlumnos from "../models/registerAlumnos";
 
@@ -16,22 +16,87 @@ router.get("/users/registerEgresados", (req, res) => {
   res.render("usersRegisterEgresados");
 });
 
-router.post("/users/registerEgresados/add", async(req, res) => {
-  const newegresado=registerEgresados(req.body)
-  const egresadoSaved=await newegresado.save()
-  console.log(egresadoSaved)
-  res.send('usuario registrad');
+router.post("/users/registerEgresados/add", async (req, res) => {
+  try {
+    const {
+      Nombre,
+      A_Paterno,
+      A_Materno,
+      Correo,
+      Telefono,
+      Ciudad,
+      Carrera,
+      Especialidad,
+      Empresa,
+      Puesto,
+      CV,
+      Usuario,
+      Contraseña,
+    } = req.body;
+    const addEgresado = new registerEgresados({
+      Nombre,
+      A_Paterno,
+      A_Materno,
+      Correo,
+      Telefono,
+      Ciudad,
+      Carrera,
+      Especialidad,
+      Empresa,
+      Puesto,
+      CV,
+      Usuario,
+      Contraseña,
+    });
+    addEgresado.Contraseña = await addEgresado.encryptPassword(Contraseña);
+    const newEgresado = await addEgresado.save();
+    console.log(newEgresado);
+    res.redirect("/users/registerEgresados");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
+//save and register alumnos
 router.get("/users/registerAlumnos", (req, res) => {
   res.render("usersRegisterAlumnos");
 });
 
-router.post("/users/registerAlumnops/add", async(req, res) => {
-  const newalumno=registerAlumnos(req.body)
-  const alumnoSaved=await newalumno.save()
-  console.log(alumnoSaved)
-  res.send('usuario registrad');
+router.post("/users/registerAlumnops/add", async (req, res) => {
+  try {
+    const {
+      Nombre,
+      A_Paterno,
+      A_Materno,
+      Correo,
+      Telefono,
+      Ciudad,
+      Carrera,
+      Especialidad,
+      Semestre,
+      Usuario,
+      Contraseña,
+    } = req.body;
+    const addAlumno = new registerAlumnos({
+      Nombre,
+      A_Paterno,
+      A_Materno,
+      Correo,
+      Telefono,
+      Ciudad,
+      Carrera,
+      Especialidad,
+      Semestre,
+      Usuario,
+      Contraseña,
+    });
+    addAlumno.Contraseña = await addAlumno.encryptPassword(Contraseña);
+    const newAlumno = await addAlumno.save();
+    console.log(newAlumno);
+    res.redirect("/users/registerAlumnos");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.get("/login", (req, res) => {
@@ -50,13 +115,20 @@ router.get("/users/admin/muro", (req, res) => {
   res.render("muroAdministrar");
 });
 
-
 router.get("/users/modifyEgresados", (req, res) => {
   res.render("usersModifyEgresados");
 });
 
-router.get("/users/modifyAlumnos", (req, res) => {
-  res.render("usersModifyAlumnos");
+//edit alumnos
+router.get("/users/modifyAlumnos/:id", async (req, res) => {
+  try {
+    const alu = await registerAlumnos.findById(req.params.id).lean();
+    console.log(alu);
+    res.render("usersModifyAlumnos",{alu});
+  } catch (error) {
+      res.render('usersModifyAlumnos')
+  }
+
 });
 
 router.get("/users/profileStudent", (req, res) => {
@@ -70,6 +142,5 @@ router.get("/users/profileEgresado", (req, res) => {
 router.get("/bolsa", (req, res) => {
   res.render("bolsacarrusel");
 });
-
 
 export default router;

@@ -5,6 +5,10 @@ import indexRoutes from "./routes/index.routes";
 const exphbs = require("express-handlebars");
 import path from "path";
 import morgan from "morgan";
+const methodOverride = require("method-override");
+const flash = require("connect-flash");
+const session = require("express-session");
+const passport = require("passport");
 
 //init
 const app = express();
