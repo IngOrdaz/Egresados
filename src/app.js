@@ -30,6 +30,8 @@ app.set("view engine", ".hbs");
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 
+app.use(methodOverride("_method"));
+
 //Routes
 app.use(indexRoutes);
 

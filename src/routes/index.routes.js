@@ -1,7 +1,7 @@
 import { Router } from "express";
 import registerEgresados from "../models/registerEgresados";
 import registerAlumnos from "../models/registerAlumnos";
-import registerPublicacion from "../models/registerPublicacion";
+import res from "express/lib/response";
 
 const router = Router();
 
@@ -155,8 +155,9 @@ router.get("/users/modifyAlumnos/:id", async (req, res) => {
   } catch (error) {
       res.render('usersModifyAlumnos')
   }
-
 });
+
+
 
 router.get("/users/profileStudent", async (req, res) => {
   
