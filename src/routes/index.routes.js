@@ -52,7 +52,7 @@ router.post("/users/registerEgresados/add", async (req, res) => {
     addEgresado.Contraseña = await addEgresado.encryptPassword(Contraseña);
     const newEgresado = await addEgresado.save();
     console.log(newEgresado);
-    res.redirect("/users/registerEgresados");
+    res.redirect("/login");
   } catch (error) {
     console.log(error);
   }
@@ -94,7 +94,7 @@ router.post("/users/registerAlumnops/add", async (req, res) => {
     addAlumno.Contraseña = await addAlumno.encryptPassword(Contraseña);
     const newAlumno = await addAlumno.save();
     console.log(newAlumno);
-    res.redirect("/users/registerAlumnos");
+    res.redirect("/login");
   } catch (error) {
     console.log(error);
   }
