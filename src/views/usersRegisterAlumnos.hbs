@@ -1,122 +1,130 @@
+{{>navbar}}
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded"></div>    
-                <form action="/users/registerAlumnops/add" class="row-g3 needs-validation" method="POST" novalidate>
-                    <h1>Registro Alumnos</h1>
-                    <br>
-                    <div class="col-md-4">
-                        <label for="Nombre" class="form-label">Nombre(s)</label>
-                        <input id="Nombre" name="Nombre" type="text" class="form-control" placeholder="Juanito" required>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>
+            <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded"></div>
+            <form action="/users/registerAlumnops/add" class="row-g3 needs-validation" method="POST" novalidate>
+                <h1>Registro Alumnos</h1>
+                <br>
+                <div class="col-md-4">
+                    <label for="Nombre" class="form-label">Nombre(s)</label>
+                    <input id="Nombre" name="Nombre" type="text" class="form-control" placeholder="Juanito" required>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
 
-                    <div class="col-md-4">
-                        <label for="A_Paterno" class="form-label">Apellido Paterno</label>
-                        <input id="A_Paterno" name="A_Paterno" type="text" class="form-control" placeholder="Maldonado" required>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>
+                <div class="col-md-4">
+                    <label for="A_Paterno" class="form-label">Apellido Paterno</label>
+                    <input id="A_Paterno" name="A_Paterno" type="text" class="form-control" placeholder="Maldonado"
+                        required>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
 
-                    <div class="col-md-4">
-                        <label for="A_Materno" class="form-label">Apellido Materno</label>
-                        <input id="A_Materno" name="A_Materno" type="text" class="form-control" placeholder="Pérez" required>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>
+                <div class="col-md-4">
+                    <label for="A_Materno" class="form-label">Apellido Materno</label>
+                    <input id="A_Materno" name="A_Materno" type="text" class="form-control" placeholder="Pérez"
+                        required>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
 
-                    <div class="col-md-4">
-                        <label for="Correo" class="form-label">Email</label>
-                        <input id="Correo" name="Correo" type="email" class="form-control" placeholder="correo@dominio.com" required>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>
+                <div class="col-md-4">
+                    <label for="Correo" class="form-label">Email</label>
+                    <input id="Correo" name="Correo" type="email" class="form-control" placeholder="correo@dominio.com"
+                        required>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
 
-                    <div class="col-md-4">
-                        <label for="Telefono" class="form-label">Teléfono</label>
-                        <input id="Telefono" name="Telefono" type="text" class="form-control" placeholder="5544332211" required>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="Ciudad" class="form-label">Ciudad</label>
-                        <input id="Ciudad" name="Ciudad" type="text" class="form-control" placeholder="Morelia" required>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="Carrera">Carrera</label>
-                        <select name="Carrera" id="Carrera" class="form-select" required>
-                            <option selected disabled value="">Seleccione...</option>
-                            <option>Ingenieria en Sistemas Computacionales</option>
-                        </select>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>
+                <div class="col-md-4">
+                    <label for="Telefono" class="form-label">Teléfono</label>
+                    <input id="Telefono" name="Telefono" type="text" class="form-control" placeholder="5544332211"
+                        required>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="Ciudad" class="form-label">Ciudad</label>
+                    <input id="Ciudad" name="Ciudad" type="text" class="form-control" placeholder="Morelia" required>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="Carrera">Carrera</label>
+                    <select name="Carrera" id="Carrera" class="form-select" required>
+                        <option selected disabled value="">Seleccione...</option>
+                        <option>Ingenieria en Sistemas Computacionales</option>
+                    </select>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
 
-                    
-                    <div class="col-md-4">
-                        <label for="semester" class="form-label">Semestre</label>
-                        <input id="semester" name="semester" type="text" class="form-control" placeholder="6" required>
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>    
 
-                    <div class="col-md-4">
-                        <label for="Especialidad" class="form-label">Especialidad</label>
-                        <input id="Especialidad" name="Especialidad" type="text" class="form-control" placeholder="Seguridad de la Información" >
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>    
+                <div class="col-md-4">
+                    <label for="semester" class="form-label">Semestre</label>
+                    <input id="semester" name="semester" type="text" class="form-control" placeholder="6" required>
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
 
-                    <div class="col-md-4">
-                        <label for="Usuario" class="form-label">Usuario</label>
-                        <input id="Usuario" name="Usuario" type="text" class="form-control" placeholder="pepitoSistemas" >
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>    
+                <div class="col-md-4">
+                    <label for="Especialidad" class="form-label">Especialidad</label>
+                    <input id="Especialidad" name="Especialidad" type="text" class="form-control"
+                        placeholder="Seguridad de la Información">
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
 
-                    <div class="col-md-4">
-                        <label for="Contraseña" class="form-label">Contraseña</label>
-                        <input id="Contraseña" name="Contraseña" type="password" class="form-control" placeholder="***" >
-                        <div class="valid-feedback">Datos Asignados</div>
-                        <div class="invalid-feedback">Complete los datos</div>
-                    </div>    
-                  
-                    <br>
-                    <button type="submit" class="btn btn-primary">Registrar</button>
-                </form>
-            </div>
+                <div class="col-md-4">
+                    <label for="Usuario" class="form-label">Usuario</label>
+                    <input id="Usuario" name="Usuario" type="text" class="form-control" placeholder="pepitoSistemas">
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="Contraseña" class="form-label">Contraseña</label>
+                    <input id="Contraseña" name="Contraseña" type="password" class="form-control" placeholder="***">
+                    <div class="valid-feedback">Datos Asignados</div>
+                    <div class="invalid-feedback">Complete los datos</div>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
         </div>
-    </div>    
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
 <!-- script para validación de datos-->
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
+    (function () {
+        'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
 </script>
 
-  <div style="padding-bottom: 50px;"></div>
+<div style="padding-bottom: 50px;"></div>
 
-  {{>footer}}
+{{>footer}}
