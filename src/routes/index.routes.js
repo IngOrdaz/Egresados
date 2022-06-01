@@ -1,6 +1,7 @@
 import { Router } from "express";
 import registerEgresados from "../models/registerEgresados";
 import registerAlumnos from "../models/registerAlumnos";
+import registerPublicacion from "../models/registerPublicacion";
 
 const router = Router();
 
@@ -107,12 +108,38 @@ router.get("/password/recover", (req, res) => {
   res.render("recoverPassword");
 });
 
-router.get("/users/muro", (req, res) => {
-  res.render("muroUsers");
+router.get("/users/muro", async(req, res) => {
+  const publica = await registerPublicacion.find({}).lean();
+  console.log(publica)
+  res.render("muroUsers",{
+    publica
+  });
 });
 
-router.get("/users/admin/muro", (req, res) => {
-  res.render("muroAdministrar");
+router.get("/users/admin/muro", async(req, res) => {
+  const publica = await registerPublicacion.find({}).lean();
+  console.log(publica)
+  res.render("muroAdministrar",{
+    publica
+  });
+});
+
+router.post("/users/admin/muro/add", async(req, res) => {
+  try {
+    const {
+      Descripcion,
+      Titulo,
+    } = req.body;
+    const addPubli = new registerPublicacion({
+      Descripcion,
+      Titulo,
+    });
+    const newPubli = await addPubli.save();
+    console.log(newPubli);
+    res.redirect("/users/admin/muro");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.get("/users/modifyEgresados", (req, res) => {
