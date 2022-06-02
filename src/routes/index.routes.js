@@ -13,6 +13,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+//Hace falta
 router.get("/password/recover", (req, res) => {
   res.render("recoverPassword");
 });
