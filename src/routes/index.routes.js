@@ -9,8 +9,20 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/login", (req, res) => {
-  res.render("login");
+//Funcionamiento de json
+router.get("/exportarDB", async (req, res) => {
+  const alumnos = await registerAlumnos.find().lean();
+  const nombre1 = alumnos[0].Nombre;
+  alumnos[0].Nombre = "ArmafuGOD";
+  const nombre2 = alumnos[0].Nombre;
+  res.json(nombre2);
+});
+
+router.get("/login", async (req, res) => {
+  const usuarios = await registerAlumnos.find({}).lean();
+  const mandar = [{"alumno": usuarios[0].Nombre, "apellido": usuarios[0].A_Paterno}, {"alumno": usuarios[1].Nombre, "apellido": usuarios[1].A_Paterno}]
+  console.log(mandar)
+  res.render("login", { mandar });
 });
 
 //Hace falta
@@ -116,13 +128,24 @@ router.get("/users/muro", async (req, res) => {
   res.render("muroUsers", { publica });
 });
 
-router.get("/users/admin/muro", async (req, res) => {
+router.get("/admin/muro", async (req, res) => {
   const publica = await registerPublicacion.find({}).lean();
   console.log(publica)
   res.render("muroAdministrar", { publica });
 });
 
-router.post("/users/admin/muro/add", async (req, res) => {
+router.get("/users/profileAlumno/:id", async (req, res) => {
+  try {
+    const alu = await registerAlumnos.findById(req.params.id).lean();
+    console.log(alu)
+    res.render("profileOneStudent", { alu });
+  } catch (error) {
+    console.log(error);
+    res.render("El Alumno No Existe");
+  }
+});
+
+router.post("/admin/muro/add", async (req, res) => {
   try {
     const {
       Descripcion,
@@ -134,21 +157,14 @@ router.post("/users/admin/muro/add", async (req, res) => {
     });
     const newPubli = await addPubli.save();
     console.log(newPubli);
-    res.redirect("/users/admin/muro");
+    res.redirect("/admin/muro");
   } catch (error) {
     console.log(error);
   }
 });
 
-//Funcionamiento de json
-router.get("/exportarDB", async (req, res) => {
-  const alumnos = await registerAlumnos.find().lean();
-  const nombre1 = alumnos[0].Nombre;
-  alumnos[0].Nombre = "ArmafuGOD";
-  const nombre2 = alumnos[0].Nombre;
-  res.json(nombre2);
-});
 
+//#region Modificar Egresados
 router.get("/users/modifyEgresado/:id", async (req, res) => {
   try {
     const egre = await registerEgresados.findById(req.params.id).lean();
@@ -177,11 +193,11 @@ router.post("/users/modifyEgresad0s/:id", async (req, res) => {
       Puesto,
       CV
     });
-    
+
     if (CV != "") {
       const newData = { "Correo": Correo, "Telefono": Telefono, "Ciudad": Ciudad, "Empresa": Empresa, "Puesto": Puesto, "CV": CV };
       await registerEgresados.findByIdAndUpdate(req.params.id, newData);
-    } else{
+    } else {
       const newData = { "Correo": Correo, "Telefono": Telefono, "Ciudad": Ciudad, "Empresa": Empresa, "Puesto": Puesto };
       await registerEgresados.findByIdAndUpdate(req.params.id, newData);
     }
@@ -190,6 +206,7 @@ router.post("/users/modifyEgresad0s/:id", async (req, res) => {
     console.log(error);
   }
 });
+//#endregion
 
 //#region Modificar Alumnos
 router.get("/users/modifyAlumno/:id", async (req, res) => {
@@ -225,15 +242,14 @@ router.post("/users/modifyAlumn0s/:id", async (req, res) => {
 });
 //#endregion
 
-router.get("/users/profileStudent", async (req, res) => {
+router.get("/admin/profileStudents", async (req, res) => {
   const usuarios = await registerAlumnos.find({}).lean();
   console.log(usuarios)
   res.render("profileStudent", { usuarios });
 });
 
-router.get("/users/profileEgresado", async (req, res) => {
+router.get("/admin/profileEgresados", async (req, res) => {
   const usuariose = await registerEgresados.find({}).lean();
-
   console.log(usuariose)
   res.render("profileEgresado", { usuariose });
 });
