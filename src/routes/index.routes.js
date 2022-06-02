@@ -201,7 +201,7 @@ router.post("/users/modifyEgresad0s/:id", async (req, res) => {
       const newData = { "Correo": Correo, "Telefono": Telefono, "Ciudad": Ciudad, "Empresa": Empresa, "Puesto": Puesto };
       await registerEgresados.findByIdAndUpdate(req.params.id, newData);
     }
-    res.redirect("/");
+    res.redirect("/admin/profileEgresados");
   } catch (error) {
     console.log(error);
   }
@@ -235,7 +235,7 @@ router.post("/users/modifyAlumn0s/:id", async (req, res) => {
     });
     const newData = { "Correo": Correo, "Telefono": Telefono, "Ciudad": Ciudad, "Semestre": Semestre };
     const alu = await registerAlumnos.findByIdAndUpdate(req.params.id, newData);
-    res.redirect("/");
+    res.redirect("/admin/profileStudents");
   } catch (error) {
     console.log(error);
   }
