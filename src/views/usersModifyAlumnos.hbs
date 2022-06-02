@@ -1,27 +1,28 @@
 {{>navbar}}
 <div class="container">
     <div class="row">
-        <h2>Modificar Alumno</h2>
         <div class="col">
             <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded"></div>
-            <form action='/users/modify-Alumnos/{{alu._id}}?_method=PUT' class="row-g3 needs-validation" novalidate>
-                <input type="hidden" name="_method" value="PUT">
+            <form action="/users/modifyAlumn0s/{{alu._id}}" class="row-g3 needs-validation" method="POST" novalidate>
+                <h1>Modificar Alumno</h1>
+                <br>
+
                 <div class="col-md-4">
                     <label for="Nombre" class="form-label">Nombre(s)</label>
-                    <input id="Nombre"  name="Nombre" type="text" class="form-control" placeholder="Juanito"
-                        value='{{alu.Nombre}}' required> 
+                    <input id="Nombre" name="Nombre" type="text" class="form-control" placeholder="Juanito"
+                        value='{{alu.Nombre}}' required disabled>
                 </div>
 
                 <div class="col-md-4">
                     <label for="A_Paterno" class="form-label">Apellido Paterno</label>
-                    <input id="A_Paterno"  name="A_Paterno" type="text" class="form-control"
-                        placeholder="Maldonado" value="{{alu.A_Paterno}}" required>
+                    <input id="A_Paterno" name="A_Paterno" type="text" class="form-control" placeholder="Maldonado"
+                        value="{{alu.A_Paterno}}" required disabled>
                 </div>
 
                 <div class="col-md-4">
                     <label for="A_Materno" class="form-label">Apellido Materno</label>
-                    <input id="A_Materno"  name="A_Materno" type="text" class="form-control"
-                        placeholder="Pérez" value="{{alu.A_Materno}}" required>
+                    <input id="A_Materno" name="A_Materno" type="text" class="form-control" placeholder="Pérez"
+                        value="{{alu.A_Materno}}" required disabled>
                 </div>
 
                 <div class="col-md-4">
@@ -32,39 +33,42 @@
 
                 <div class="col-md-4">
                     <label for="Telefono" class="form-label">Teléfono</label>
-                    <input id="Telefono"  name="Telefono" type="text" class="form-control" placeholder="5544332211" value="{{alu.Telefono}}"
-                        required>
+                    <input id="Telefono" name="Telefono" type="number" class="form-control" placeholder="5544332211"
+                        value="{{alu.Telefono}}" required>
                 </div>
-                      <div class="col-md-4">
+                <div class="col-md-4">
                     <label for="Ciudad" class="form-label">Ciudad</label>
-                    <input id="Ciudad"  name="Ciudad" type="text" class="form-control"
+                    <input id="Ciudad" name="Ciudad" type="text" class="form-control"
                         placeholder="Seguridad de la Información" value="{{alu.Ciudad}}" required>
                 </div>
 
                 <div class="col-md-3">
                     <label for="Carrera">Carrera</label>
-                    <select name="Carrera"  id="Carrera" class="form-select" required>
+                    <select name="Carrera" id="Carrera" class="form-select" required disabled>
                         <option selected value="">{{alu.Carrera}}</option>
                         <option>Ingenieria en Sistemas Computacionales</option>
                     </select>
                 </div>
 
                 <div class="col-md-4">
-                    <label for="Especialidad" class="form-label">Especialidad</label>
-                    <input id="Especialidad"  name="Especialidad" type="text" class="form-control"
-                        placeholder="Seguridad de la Información" value="{{alu.Especialidad}}" required>
+                    <label for="Semestre" class="form-label">Semestre</label>
+                    <input id="Semestre" name="Semestre" type="number" class="form-control" placeholder="6"
+                        value="{{alu.Semestre}}" required>
                 </div>
 
                 <div class="col-md-4">
-                    <label for="Semestre" class="form-label">Semestre</label>
-                    <input id="Semestre" name="Semestre" type="text" class="form-control" placeholder="6" value="{{alu.Semestre}}" required>
+                    <label for="Especialidad" class="form-label">Especialidad</label>
+                    <input id="Especialidad" name="Especialidad" type="text" class="form-control"
+                        placeholder="Seguridad de la Información" value="{{alu.Especialidad}}" required disabled>
                 </div>
 
                 <div class="col-md-4">
                     <label for="Usuario" class="form-label">Usuario</label>
                     <input id="Usuario" name="Usuario" type="text" class="form-control" placeholder="Lider de Proyecto"
-                        value="{{alu.Usuario}}" required>
+                        value="{{alu.Usuario}}" required disabled>
                 </div>
+
+                <br>
                 <button type="submit" class="btn btn-primary">Modificar</button>
             </form>
         </div>
@@ -100,6 +104,6 @@
 </script>
 
 
-  <div style="padding-bottom: 50px;"></div>
+<div style="padding-bottom: 50px;"></div>
 
-  {{>footer}}
+{{>footer}}

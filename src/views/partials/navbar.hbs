@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 
 <style>
@@ -26,6 +26,10 @@
 
   .barraNavegacion a:hover {
     text-decoration: underline;
+  }
+
+  #navegacionDropdown li a:hover {
+    background-color: #17315a;
   }
 </style>
 <header>
@@ -69,12 +73,21 @@
           <li class="navbar-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
-          <li class="navbar-item">
-            <a class="nav-link" href="/users/registerAlumnos">Registrar</a>
+          <li class="nav-item dropdown" id="navegacion2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Registrar
+            </a>
+            <ul class="dropdown-menu" style="background-color: #17315a;" id="navegacionDropdown" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/users/registerAlumnos">Registrar Alumno</a></li>
+              <li><a class="dropdown-item" href="/users/registerEgresados">Registrar Egresado</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 </header>
