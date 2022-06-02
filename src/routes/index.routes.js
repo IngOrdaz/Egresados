@@ -149,16 +149,57 @@ router.get("/exportarDB", async (req, res) => {
 });
 
 router.get("/users/modifyEgresado/:id", async (req, res) => {
-  const egre = await registerEgresados.findById(req.params.id).lean();
-  console.log(egre)
-  res.render("usersModifyEgresados", { egre });
+  try {
+    const egre = await registerEgresados.findById(req.params.id).lean();
+    console.log(egre)
+    res.render("usersModifyEgresados", { egre });
+  } catch (error) {
+    console.log(error);
+    res.render("El Egresado No Existe")
+  }
+});
+router.post("/users/modifyEgresad0s/:id", async (req, res) => {
+  try {
+    const {
+      Correo,
+      Telefono,
+      Ciudad,
+      Empresa,
+      Puesto,
+      CV
+    } = req.body;
+    const newEgre = new registerEgresados({
+      Correo,
+      Telefono,
+      Ciudad,
+      Empresa,
+      Puesto,
+      CV
+    });
+    
+    if (CV != "") {
+      const newData = { "Correo": Correo, "Telefono": Telefono, "Ciudad": Ciudad, "Empresa": Empresa, "Puesto": Puesto, "CV": CV };
+      await registerEgresados.findByIdAndUpdate(req.params.id, newData);
+    } else{
+      const newData = { "Correo": Correo, "Telefono": Telefono, "Ciudad": Ciudad, "Empresa": Empresa, "Puesto": Puesto };
+      await registerEgresados.findByIdAndUpdate(req.params.id, newData);
+    }
+    res.redirect("/");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 //#region Modificar Alumnos
 router.get("/users/modifyAlumno/:id", async (req, res) => {
-  const alu = await registerAlumnos.findById(req.params.id).lean();
-  console.log(alu)
-  res.render("usersModifyAlumnos", { alu });
+  try {
+    const alu = await registerAlumnos.findById(req.params.id).lean();
+    console.log(alu)
+    res.render("usersModifyAlumnos", { alu });
+  } catch (error) {
+    console.log(error);
+    res.render("El Alumno No Existe");
+  }
 });
 router.post("/users/modifyAlumn0s/:id", async (req, res) => {
   try {
