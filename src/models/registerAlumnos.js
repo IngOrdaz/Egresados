@@ -25,7 +25,7 @@ const registerAlumnosSchema = new Schema(
       unique: true,
     },
     Telefono: {
-      type: String,
+      type: Number,
       require: true,
       trim: true,
     },
@@ -40,7 +40,7 @@ const registerAlumnosSchema = new Schema(
       require: true,
     },
     Semestre: {
-      type: String,
+      type: Number,
       trim: true,
       require: true,
     },
@@ -69,9 +69,9 @@ const registerAlumnosSchema = new Schema(
 );
 
 //bcrypt password
-registerAlumnosSchema.methods.encryptPassword = async (Contraseña) => {
+/*registerAlumnosSchema.methods.encryptPassword = async (Contraseña) => {
   const salt = await bcrypt.genSalt(10);
   const hash = bcrypt.hash(Contraseña, salt);
   return hash;
-};
+};*/
 export default model("Alumnos", registerAlumnosSchema);

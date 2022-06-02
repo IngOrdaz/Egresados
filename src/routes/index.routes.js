@@ -19,10 +19,18 @@ router.get("/exportarDB", async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
-  const usuarios = await registerAlumnos.find({}).lean();
-  const mandar = [{"alumno": usuarios[0].Nombre, "apellido": usuarios[0].A_Paterno}, {"alumno": usuarios[1].Nombre, "apellido": usuarios[1].A_Paterno}]
-  console.log(mandar)
+  const alumnos = await registerAlumnos.find({}).lean();
+  const egresados = await registerEgresados.find({}).lean();
+  var mandar = [];
+  for(let i = 0; i < alumnos.length; i++){
+    mandar.push( {"alumno": alumnos[i].Usuario, "password": alumnos[i].Contraseña});
+  }
+  for(let i = 0; i < egresados.length; i++){
+    mandar.push( {"egresado": egresados[i].Usuario, "password": egresados[i].Contraseña});
+  }
+  console.log(mandar);
   res.render("login", { mandar });
+  //res.render("login");
 });
 
 //Hace falta
@@ -70,7 +78,7 @@ router.post("/users/registerEgresados/add", async (req, res) => {
       Usuario,
       Contraseña,
     });
-    addEgresado.Contraseña = await addEgresado.encryptPassword(Contraseña);
+    //addEgresado.Contraseña = await addEgresado.encryptPassword(Contraseña);
     const newEgresado = await addEgresado.save();
     console.log(newEgresado);
     res.redirect("/login");
@@ -112,7 +120,7 @@ router.post("/users/registerAlumnops/add", async (req, res) => {
       Usuario,
       Contraseña,
     });
-    addAlumno.Contraseña = await addAlumno.encryptPassword(Contraseña);
+    //addAlumno.Contraseña = await addAlumno.encryptPassword(Contraseña);
     const newAlumno = await addAlumno.save();
     console.log(newAlumno);
     res.redirect("/login");

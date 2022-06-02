@@ -25,7 +25,7 @@ const registerEgresadosSchema = new Schema(
       unique: true,
     },
     Telefono: {
-      type: String,
+      type: Number,
       require: true,
       trim: true,
     },
@@ -79,11 +79,11 @@ const registerEgresadosSchema = new Schema(
 );
 
 //bcrypt password
-registerEgresadosSchema.methods.encryptPassword = async (Contraseña) => {
+/*registerEgresadosSchema.methods.encryptPassword = async (Contraseña) => {
   const salt = await bcrypt.genSalt(10);
   const hash = bcrypt.hash(Contraseña, salt);
   return hash;
-};
+};*/
 
 
 //registerEgresadosSchema.methods.matchPassword= async function(Contraseña){

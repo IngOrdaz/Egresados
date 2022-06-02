@@ -407,9 +407,6 @@
 </style>
 
 {{#each mandar}}
-{{alumno}}
-{{apellido}}
-<br>
 {{/each}}
 
 <head>
@@ -423,19 +420,22 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="/users/muro" class="sign-in-form">
+        <form action="" class="sign-in-form">
           <h2 class="title">Iniciar sesión como Alumno</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" id="logal"placeholder="Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" id="pal" placeholder="Password" />
           </div>
-          <input type="submit" value="Login" class="btn solid" />
+          <input type="button" id="btn_alumno" value="Login" class="btn solid" />
           <p class="social-text">¿Tienes ya una cuenta como alumno?</p>
           <div class="social-media">
+            <a href="/password/recover" class="social-icon">
+              <i class="fa-solid fa-key"></i>
+            </a>
             <a href="#" class="social-icon">
               <i class="fab fa-facebook-f"></i>
             </a>
@@ -450,19 +450,22 @@
             </a>
           </div>
         </form>
-        <form action="/authenticate" class="sign-up-form">
+        <form action="" class="sign-up-form">
           <h2 class="title">Iniciar sesión como Egresado</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" placeholder="Username" id="logeg"/>
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" id="peg" />
           </div>
-          <input type="submit" class="btn" value="LOGIN" />
+          <input type="button" id="btn_egresado" class="btn" value="LOGIN" />
           <p class="social-text">¿Tienes ya una cuenta como Egresado?</p>
           <div class="social-media">
+            <a href="/password/recover" class="social-icon">
+              <i class="fa-solid fa-key"></i>
+            </a>
             <a href="#" class="social-icon">
               <i class="fab fa-facebook-f"></i>
             </a>
@@ -513,6 +516,14 @@
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
     const container = document.querySelector(".container");
+    const array = [];
+
+    {{#each mandar}}
+      array.push({"alumno": "{{alumno}}", "password": "{{password}}"});
+    {{/each}}
+    {{#each mandar}}
+      array.push({"egresado": "{{egresado}}", "password": "{{password}}"});
+    {{/each}}
 
     sign_up_btn.addEventListener("click", () => {
       container.classList.add("sign-up-mode");
@@ -520,6 +531,44 @@
 
     sign_in_btn.addEventListener("click", () => {
       container.classList.remove("sign-up-mode");
+    });
+
+    btn_alumno.addEventListener("click", () =>{
+      var user = document.getElementById("logal").value.toString();
+      var pass = document.getElementById("pal").value.toString();
+      var er = false;
+      for(let i = 0; i < array.length; i++){
+        console.log(array[i].alumno + " = " + user)
+        if(user == array[i].alumno){
+          if(pass == array[i].password){
+            console.log("si jala");
+            er = true;
+            window.location.href = "/users/muro";
+          }
+        }
+      }
+      if(er == false){
+        alert("Contraseña y/o usuario incorectos");
+      }
+    });
+
+    btn_egresado.addEventListener("click", () =>{
+      var user = document.getElementById("logeg").value.toString();
+      var pass = document.getElementById("peg").value.toString();
+      var er = false;
+      for(let i = 0; i < array.length; i++){
+        console.log(array[i].egresado + " = " + user);
+        if(user == array[i].egresado){
+          if(pass == array[i].password){
+            console.log("si jala");
+            er = true;
+            window.location.href = "/users/muro";
+          }
+        }
+      }
+      if(er == false){
+        alert("Contraseña y/o usuario incorectos");
+      }
     });
   </script>
 </body>
